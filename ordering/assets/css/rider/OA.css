@@ -1,0 +1,247 @@
+/* =========================
+   Base & Tokens
+   ========================= */
+:root{
+  --red:#e53935;
+  --red-700:#dc2626;
+  --red-800:#cc0000;
+  --green:#28a745;
+  --amber:#ffc107;
+  --blue:#007bff;
+  --teal:#17a2b8;
+
+  --gray-50:#f8f9fa;
+  --gray-100:#f1f3f5;
+  --gray-300:#eee;
+  --gray-400:#ccc;
+  --gray-500:#999;
+  --gray-600:#666;
+  --gray-700:#555;
+  --gray-800:#333;
+
+  --radius-sm:5px;
+  --radius-md:8px;
+  --radius-lg:10px;
+  --shadow-sm:0 1px 4px rgba(0,0,0,.05);
+  --shadow-md:0 2px 5px rgba(0,0,0,.1);
+  --shadow-lg:0 5px 15px rgba(0,0,0,.3);
+  --transition:transform .15s ease, opacity .15s ease;
+}
+
+*{box-sizing:border-box}
+body{font-family:sans-serif;margin:0}
+
+/* =========================
+   Layout
+   ========================= */
+.main-content{
+  margin-left:250px;
+  padding:0;
+  transition:margin-left .3s ease;
+}
+
+/* =========================
+   Header / Rider info
+   ========================= */
+.page-header{
+  background:var(--red);
+  color:#fff;
+  padding:15px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  font-size:24px;
+  font-weight:700;
+  box-shadow:0 2px 4px rgba(0,0,0,.1);
+}
+.page-header i{margin-right:15px;font-size:30px}
+
+.rider-info{display:flex;gap:15px;flex-wrap:wrap}
+.rider-id,.rider-status{
+  background:var(--gray-50);
+  padding:5px 10px;border-radius:15px;
+  font-size:.9em;font-weight:500
+}
+.status-active{background:#d4edda!important;color:#155724;border:1px solid #c3e6cb}
+.status-inactive{background:#f8d7da!important;color:#721c24;border:1px solid #f5c6cb}
+
+.status-toggle-btn{
+  margin-left:10px;padding:5px 10px;border:0;border-radius:var(--radius-sm);
+  background:var(--blue);color:#fff;cursor:pointer
+}
+
+/* =========================
+   Lists / Cards
+   ========================= */
+.order-assignments-list{padding:20px;display:flex;flex-direction:column;gap:20px}
+
+.order-card{
+  background:#fff;border-radius:var(--radius-md);box-shadow:var(--shadow-md);
+  padding:20px;display:flex;flex-direction:column;transition:transform .2s ease;
+  border-left:4px solid transparent
+}
+.order-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.card-accent-success{border-left-color:var(--green)}
+.card-accent-danger{border-left-color:var(--red)}
+
+.customer-info-section{
+  display:flex;align-items:center;border-bottom:1px solid var(--gray-300);
+  padding-bottom:15px;margin-bottom:15px;gap:12px
+}
+.customer-profile-pic{
+  width:50px;height:50px;background:var(--gray-100);border-radius:50%;
+  display:grid;place-items:center;font-size:24px;color:var(--gray-500);flex-shrink:0
+}
+.customer-details{flex:1}
+.customer-details p{margin:0;font-size:15px;color:var(--gray-700)}
+.customer-name{font-size:18px;color:var(--gray-800);margin-bottom:5px!important}
+
+.order-summary-section{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  flex-wrap:wrap;gap:10px
+}
+.order-quantity{font-size:16px;color:var(--gray-700);margin:0;align-self:flex-start}
+.order-total-amount{font-size:22px;font-weight:700;color:var(--red);margin:0}
+
+/* Dashboard */
+.rider-dashboard{margin:20px 0;display:flex;gap:15px;flex-wrap:wrap}
+.stat-card{
+  background:var(--gray-50);padding:15px;border-radius:var(--radius-lg);
+  min-width:150px;text-align:center;box-shadow:var(--shadow-sm)
+}
+.stat-card h3{margin:5px 0}
+.stat-card p{margin:0;color:var(--gray-600)}
+.icon-accent-warning,.icon-accent-success,.icon-accent-primary{font-size:1.5em}
+.icon-accent-warning{color:var(--amber)}
+.icon-accent-success{color:var(--green)}
+.icon-accent-primary{color:var(--blue)}
+
+/* Alerts */
+.connection-status{margin:15px 0}
+.alert{
+  padding:10px 15px;margin-bottom:20px;border:1px solid transparent;border-radius:4px
+}
+.alert-success{color:#155724;background:#d4edda;border-color:#c3e6cb}
+.alert i{margin-right:8px}
+
+/* Section headings */
+.section-title{margin-bottom:15px}
+.section-title.success{color:var(--green)}
+.section-title.danger{color:var(--red)}
+
+/* Status badges */
+.status-badge{
+  padding:3px 8px;border-radius:12px;font-size:.8em;font-weight:700;text-transform:uppercase
+}
+.status-on_delivery{background:var(--teal);color:#fff}
+.status-picked_up{background:var(--amber);color:#212529}
+.status-delivered{background:var(--green);color:#fff}
+
+/* Empty state */
+.no-orders{
+  text-align:center;padding:40px;color:var(--gray-600);
+  background:var(--gray-50);border-radius:var(--radius-lg)
+}
+.empty-icon{font-size:3em;margin-bottom:15px}
+
+/* Buttons */
+.btn{
+  border:0;padding:10px 20px;border-radius:var(--radius-sm);cursor:pointer;margin-top:10px;
+  transition:var(--transition)
+}
+.accept-btn,.refresh-btn{background:var(--blue);color:#fff}
+.complete-btn{background:var(--green);color:#fff}
+.btn:hover{opacity:.9;transform:translateY(-1px)}
+
+/* =========================
+   Modal
+   ========================= */
+.modal{
+  display:none;position:fixed;z-index:1000;inset:0;width:100%;height:100%;
+  overflow:auto;background:rgba(0,0,0,.4);justify-content:center;align-items:center
+}
+.modal.show{display:flex}
+
+.modal-content{
+  background:#fefefe;margin:auto;padding:30px;border:1px solid #888;width:90%;max-width:400px;
+  border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);text-align:center;position:relative
+}
+.close-button{
+  color:#aaa;position:absolute;top:10px;right:15px;font-size:28px;font-weight:700;cursor:pointer
+}
+.close-button:hover,.close-button:focus{color:#333;text-decoration:none}
+
+.modal-content h2{color:var(--gray-800);margin-bottom:20px;font-size:24px}
+.modal-content p{margin-bottom:30px;font-size:16px;color:var(--gray-700)}
+
+.modal-actions button{
+  padding:10px 20px;border:0;border-radius:var(--radius-sm);cursor:pointer;
+  font-size:16px;margin:0 10px;transition:background-color .3s ease
+}
+.modal-actions .cancel{background:#ccc;color:#333}
+.modal-actions .cancel:hover{background:#bbb}
+.modal-actions .logout{background:var(--red-700);color:#fff}
+.modal-actions .logout:hover{background:var(--red-800)}
+
+/* =========================
+   Notifications (toast)
+   ========================= */
+.notification{
+  position:fixed;top:20px;right:20px;padding:15px 20px;border-radius:var(--radius-sm);
+  color:#fff;font-weight:700;z-index:10000;max-width:300px;box-shadow:var(--shadow-lg)
+}
+.notification.success{background:var(--green)}
+.notification.error{background:var(--red)}
+.notification.warning{background:var(--amber);color:#212529}
+.notification.info{background:var(--blue)}
+
+/* =========================
+   Responsive
+   ========================= */
+/* ≤992px */
+@media (max-width:992px){
+  .main-content{margin-left:80px}
+  .page-header{font-size:20px;padding:10px 15px}
+  .page-header i{font-size:25px;margin-right:10px}
+  .order-assignments-list{padding:15px;gap:15px}
+  .order-card{padding:15px}
+  .customer-name{font-size:16px}
+  .customer-details p{font-size:14px}
+  .order-total-amount{font-size:20px}
+  /* Sidebar collapsed helpers (kept from original) */
+  .sidenav .active{margin:0;border-radius:0;padding-left:0}
+  .dropdown-content{display:none!important}
+  .dropdown-btn .fa-caret-down{display:none}
+}
+
+/* ≤768px */
+@media (max-width:768px){
+  .main-content{margin-left:0;padding-top:0}
+  .page-header{font-size:18px;padding:10px;justify-content:center;text-align:center}
+  .page-header i{font-size:22px;margin-right:10px}
+  .order-assignments-list{padding:10px;gap:10px}
+  .customer-info-section{flex-direction:column;align-items:flex-start;text-align:left;padding-bottom:10px;margin-bottom:10px}
+  .customer-profile-pic{margin:0 0 10px 0}
+  .order-summary-section{flex-direction:column;align-items:flex-start;gap:5px}
+  .customer-name{font-size:15px}
+  .customer-details p{font-size:13px}
+  .order-total-amount{font-size:18px}
+  .modal-content{width:95%;padding:20px}
+  .modal-content h2{font-size:20px}
+  .modal-content p{font-size:14px}
+  .modal-actions button{padding:8px 15px;font-size:14px;margin:0 5px}
+}
+
+/* ≤480px */
+@media (max-width:480px){
+  .page-header{font-size:16px;padding:8px}
+  .page-header i{font-size:20px}
+  .order-assignments-list{padding:8px;gap:8px}
+  .order-card{padding:12px}
+  .customer-name{font-size:14px}
+  .customer-details p{font-size:12px}
+  .order-total-amount{font-size:16px}
+  .modal-content{padding:15px}
+  .close-button{font-size:24px;top:5px;right:10px}
+}

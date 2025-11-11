@@ -1,0 +1,125 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+.main-container {
+    margin-left: 250px; /* Default for desktop with sidebar */
+    padding: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.header {
+    text-align: center;
+}
+.header h1 {
+    font-size: 2.25rem; /* 36px */
+    font-weight: 700;
+    color: #1f2937; /* Gray-800 */
+    margin: 0;
+}
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem; /* 8px */
+}
+.nav-btn {
+    background-color: #ffffff;
+    color: #1f2937;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem; /* 8px 24px */
+    border: none;
+    border-radius: 9999px; /* rounded-full */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.nav-btn:hover {
+    background-color: #e5e7eb; /* Gray-200 */
+}
+.nav-btn.active {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    background-color: #f9fafb; /* Gray-50 */
+    border-radius: 0.75rem; /* 12px */
+    padding: 1rem;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+.chart-section {
+    display: flex;
+    justify-content: center;
+}
+.table-section h2 {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    overflow: hidden; /* This is key for rounded corners on the table */
+}
+.transaction-table thead {
+    background-color: #e5e7eb;
+}
+.transaction-table th {
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 500;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.transaction-table th:first-child {
+    border-top-left-radius: 0.75rem;
+}
+.transaction-table th:last-child {
+    border-top-right-radius: 0.75rem;
+}
+.transaction-table th, td {
+    border: 1px solid #ddd;
+}
+.transaction-table tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+    transition: background-color 0.2s ease-in-out;
+}
+.transaction-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+.transaction-table td {
+    padding: 1rem 1.5rem;
+    color: #4b5563; /* Gray-600 */
+    white-space: nowrap;
+}
+.transaction-table td.amount {
+    font-weight: 500;
+    color: #ef4444; /* Red-500 */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    .dashboard-container {
+        padding: 1rem;
+    }
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    .nav-btn {
+        padding: 0.5rem 1rem;
+    }
+    .transaction-table th, .transaction-table td {
+        padding: 0.75rem 1rem;
+    }
+}
